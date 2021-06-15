@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.toonlyt.rpa.MainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@mipmap/logo_round" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/atma_semibold"
+                    android:text="@string/app_name"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/linlayanchor"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/boxoid_btn"
+            android:elevation="10dp"
+            android:gravity="center">
+
+            <FrameLayout
+                android:id="@+id/view_finder"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:paddingTop="16dp" />
+        </LinearLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/boxoid_btn"
+            android:elevation="10dp"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/original_imageview"
+                        android:layout_width="@dimen/previewSize"
+                        android:layout_height="@dimen/previewSize"
+                        android:layout_marginLeft="15dp"
+                        android:padding="4dp"
+                        android:src="@drawable/orignal" />
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="@dimen/previewSize"
+                    android:layout_height="@dimen/previewSize">
+
+                    <ProgressBar
+                        android:id="@+id/progress_circular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <ImageView
+                        android:id="@+id/result_imageview"
+                        android:layout_width="@dimen/previewSize"
+                        android:layout_height="@dimen/previewSize"
+                        android:padding="4dp" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+
+            android:layout_weight="1"
+            android:background="@drawable/boxoid_btn"
+            android:baselineAligned="false"
+            android:elevation="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxoid1_btn"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:src="@drawable/ic_outline_save"
+                    android:text="Download"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxoid1_btn"
+                    android:gravity="center"
+                    android:onClick="openGallery"
+                    android:text="Gallery"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/StyleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/boxoid1_btn">
+
+                <ImageView
+                    android:id="@+id/style_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/choose_style_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="Style"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="italic"
+
+                    />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/capture_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxoid1_btn"
+                    android:gravity="center"
+                    android:onClick="openGallery"
+                    android:text="Capture"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+
+                <Button
+                    android:id="@+id/toggle_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boxoid1_btn"
+                    android:onClick="openGallery"
+                    android:text="Toggle"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+
+            <!--<Button
+                android:id="@+id/btn_save"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Download"
+                android:background="@drawable/boxoid1_btn"
+                android:src="@drawable/ic_outline_save"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/boxoid1_btn"
+                android:text="Upload"
+                android:onClick="openGallery"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/toggle_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/boxoid1_btn"
+                android:text="Restart"
+                android:onClick="openGallery"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/style_imageview"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/boxoid1_btn"
+                android:text="Styles"
+                android:onClick="openGallery"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/capture_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/boxoid1_btn"
+                android:text="Capture"
+                android:onClick="openGallery"
+                android:textAllCaps="false"
+                />-->
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/capture_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:backgroundTint="#F44336"
+        app:layout_anchor="@id/linlayanchor"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_capture" />
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        app:layout_anchor="@id/capture_button"
+        app:layout_anchorGravity="top|right|end" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/toggle_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:backgroundTint="#4BD62C"
+        app:layout_anchor="@id/dummy"
+        app:layout_anchorGravity="top|end"
+        app:srcCompat="@drawable/ic_switch" />-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
