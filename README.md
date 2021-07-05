@@ -1,11 +1,12 @@
 # ToonLyt | The Pastiche Creator
 
 ## About: 
-ToonLyt | An Android application that helps you create pastiches and cartoonised images. Pastiche - is nothing but an artistic work in a style that imitates that of another work or an artist. There are over 15+ style images available in this applciation. It is available for all **Android Phones above** *Android 8.0 - Oreo*.  
+ToonLyt | An Android application that helps you create pastiches and cartoonised images. Pastiche is basically an artistic work in a style that imitates that of another work or an artist. There are over 15+ style images available in this applciation. ToonLyt is currently available for all **Android Phones above** *Android 8.0 - Oreo*.  
+
 ## Download for Android
 Download the ToonLyt APK from the  [latest release](https://github.com/sairpa/ToonLytV2/releases).
 
-## Intro:
+## How it works:
 It uses one of the Machine Learning Techniques - *Neural Style Transfer* for Pastiche Creation. This works by selecting a Style image and Source Image, extracting these features separately and rendering them into a single stylized image. 
 
 ## Features:
