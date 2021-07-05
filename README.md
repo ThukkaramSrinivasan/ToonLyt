@@ -15,6 +15,7 @@ An Android Application that uses the Machine Learning Technique - *Neural Style 
 
 ## Images:
 
+![App](/Images/ToonLyt.jpg)
 ### Logo:
 ![Logo](/Images/Logo.png)
 
